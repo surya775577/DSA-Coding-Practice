@@ -1,0 +1,60 @@
+# Move Zeros to End
+
+This program takes an array of integers as input and **moves all the zeros to the end** of the array while maintaining the relative order of non-zero elements.
+
+## 📌 Problem Description
+
+Given an array of integers, shift all zeros to the end **without changing the order** of the non-zero elements.
+
+Example:
+
+```
+Input:  [0, 1, 0, 3, 12]  
+Output: [1, 3, 12, 0, 0]
+```
+
+## 🛠️ How It Works
+
+* Iterate through the array, copying non-zero elements to the front.
+* Keep track of the current position using a pointer (`curr`).
+* Fill the remaining positions with `0`.
+
+This approach runs in **O(n) time** and uses **O(1) extra space** (in-place modification).
+
+## 💻 Code
+
+```python
+def move(arr):
+    curr = 0
+    for num in nums:
+        if num != 0:
+            arr[curr] = num
+            curr += 1
+    while curr < len(arr):
+        arr[curr] = 0
+        curr += 1
+    return arr
+
+n = int(input())  # Number of elements
+nums = list(map(int, input().split()))  # Input array
+print(move(nums))  # Output after moving zeros
+```
+
+## ▶️ Example Run
+
+**Input:**
+
+```
+5
+0 1 0 3 12
+```
+
+**Output:**
+
+```
+[1, 3, 12, 0, 0]
+```
+
+---
+
+Do you want me to also include **edge cases** (like empty array, all zeros, no zeros) in the README for better clarity?
