@@ -1,0 +1,50 @@
+🔄 Reverse an Array
+
+This program takes an array of integers as input and reverses its elements in-place, meaning it does not use any extra array for storing the reversed result.
+
+📌 Problem Description
+
+Given an array of integers, reverse the order of its elements.
+
+Example:
+
+Input:  [1, 2, 3, 4, 5]  
+Output: [5, 4, 3, 2, 1]
+
+🛠️ Approach
+
+Use two-pointer technique:
+
+One pointer starts from the beginning (start), the other from the end (end).
+
+Swap elements at start and end.
+
+Move both pointers towards the center until they meet.
+
+This is an in-place algorithm with O(n) time complexity and O(1) space complexity.
+
+💻 Code
+def reverse(arr):
+    start = 0
+    end = len(arr) - 1
+    while start < end:
+        arr[start], arr[end] = arr[end], arr[start]
+        start += 1
+        end -= 1
+    return arr
+
+n = int(input())  # Number of elements
+arr = list(map(int, input().split()))  # Input array
+print(reverse(arr))  # Output reversed array
+
+▶️ Example Run
+
+Input:
+
+5
+1 2 3 4 5
+
+
+Output:
+
+[5, 4, 3, 2, 1]
