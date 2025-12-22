@@ -1,0 +1,29 @@
+Maximum Profit from Stock Prices
+🧠 Problem Overview
+
+You are given a list of stock prices where each element represents the price of a stock on a particular day.
+Your task is to calculate the maximum profit you can achieve by making any number of buy and sell transactions, with the condition that:
+
+You must sell the stock before you buy again
+
+You can buy and sell on different days
+
+You cannot hold multiple stocks at the same time
+
+💡 Approach & Intuition
+
+This solution follows a greedy strategy:
+
+Iterate through the list of prices
+
+Whenever today’s price is higher than yesterday’s, take the profit
+
+Accumulate all such positive differences
+
+Why this works:
+
+Any increasing sequence can be broken into smaller profitable trades
+
+The sum of all these small profits equals the maximum possible profit
+
+This avoids complex dynamic programming and keeps the solution efficient and elegant.
