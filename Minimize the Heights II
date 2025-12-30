@@ -1,0 +1,31 @@
+Minimize the Heights II
+This problem focuses on minimizing the height difference between towers after applying a mandatory modification. Given an array representing the heights of towers and an integer k, each tower’s height must be either increased or decreased by exactly k, with the constraint that no resulting height becomes negative.
+
+🔍 Problem Approach
+The array is first sorted to make height comparisons predictable.
+
+An initial difference is computed between the tallest and shortest towers.
+
+A greedy strategy is applied:
+
+Smaller towers are increased by k
+
+Larger towers are decreased by k
+
+For every possible partition of the array, the minimum and maximum achievable heights are calculated.
+
+The minimum possible difference across all valid configurations is tracked and returned.
+
+This approach ensures an optimal solution while avoiding brute-force combinations.
+
+⚙️ Complexity Analysis
+Time Complexity: O(n log n) (due to sorting)
+
+Space Complexity: O(1) (constant extra space)
+
+✅ Key Constraints Handled
+Every tower is modified exactly once
+
+Resulting heights are never negative
+
+Efficient for large inputs (n up to 10⁵)
