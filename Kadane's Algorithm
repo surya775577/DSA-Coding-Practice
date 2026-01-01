@@ -1,0 +1,35 @@
+Maximum Subarray Sum
+
+The Maximum Subarray Sum problem is a fundamental array optimization problem that focuses on identifying a contiguous segment of an array with the highest possible sum.
+Given an integer array arr[], the task is to determine the maximum sum obtainable from any non-empty continuous subarray.
+A subarray must consist of consecutive elements, and at least one element must be included in the solution.
+
+🔍 Why This Problem Matters
+
+This problem is widely used to:
+Teach dynamic programming concepts
+Assess problem-solving and optimization skills
+Evaluate understanding of time and space complexity
+Serve as a foundation for more advanced problems (e.g., circular arrays, 2D arrays)
+It frequently appears in technical interviews, competitive programming, and coding assessments.
+
+🧠 Key Insight
+
+At each index, we decide:
+Whether to extend the current subarray
+Or start a new subarray from the current element
+This greedy decision-making process leads to an optimal solution when applied correctly.
+
+⚙️ Approach Used
+
+The problem is efficiently solved using Kadane’s Algorithm, which:
+Traverses the array once
+Maintains the maximum sum ending at each position
+Keeps track of the overall maximum encountered
+This ensures optimal performance even for large input sizes.
+
+🚀 Performance Characteristics
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+The solution is highly efficient and suitable for large arrays (up to 10^5 elements).
