@@ -1,0 +1,33 @@
+This program finds the maximum product of a contiguous subarray within a given integer array.
+The array may contain positive numbers, negative numbers, and zeros, making the problem non-trivial.
+
+A brute-force approach would be inefficient. This solution uses an optimized dynamic programming technique to achieve linear time complexity.
+
+⚙️ Key Idea
+At every position in the array:
+
+Track the maximum product ending at that index
+
+Track the minimum product ending at that index
+
+Why track both?
+
+A negative number can turn a minimum product into a maximum (and vice versa)
+
+🔁 Algorithm Logic
+Initialize:
+
+max_pro, min_pro, and result with the first element
+
+Traverse the array from left to right
+
+If the current element is negative, swap max_pro and min_pro
+
+Update:
+max_pro = max(current, max_pro × current)
+min_pro = min(current, min_pro × current)
+Update the global maximum result
+
+🚀 Time & Space Complexity
+Time Complexity: O(n)
+Space Complexity: O(1) (constant extra space)
