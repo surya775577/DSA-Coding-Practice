@@ -1,0 +1,98 @@
+# Maximum Circular Subarray Sum
+
+## 📌 Problem Overview
+
+Given a **circular array of integers**, the task is to find the **maximum possible sum of a non-empty subarray**.
+In a circular array, subarrays may **wrap around** from the end of the array back to the beginning.
+
+### Example
+
+```
+Input:  [8, -8, 9, -9, 10, -11, 12]
+Output: 22
+```
+
+---
+
+## 🧠 Core Idea
+
+The maximum subarray sum in a circular array can be obtained in **two possible ways**:
+
+1. **Non-wrapping subarray**
+   → Standard maximum subarray problem solved using **Kadane’s Algorithm**.
+
+2. **Wrapping subarray**
+   → The maximum circular sum equals:
+
+   ```
+   total_array_sum − minimum_subarray_sum
+   ```
+
+   This works because removing the minimum subarray leaves the maximum wrapping subarray.
+
+The final answer is the **maximum of these two cases**.
+
+---
+
+## ⚠️ Important Edge Case
+
+If **all elements are negative**, the wrapping case becomes invalid.
+In this scenario, the correct result is simply the **largest (least negative) element**, which Kadane’s algorithm already provides.
+
+---
+
+## 🛠️ Algorithm Steps
+
+1. Use Kadane’s Algorithm to compute:
+
+   * Maximum subarray sum (non-circular case)
+2. Use a modified Kadane’s Algorithm to compute:
+
+   * Minimum subarray sum
+3. Compute the total sum of the array
+4. If all elements are negative, return the maximum subarray sum
+5. Otherwise, return:
+
+   ```
+   max(max_subarray_sum, total_sum − min_subarray_sum)
+   ```
+
+---
+
+## 🧩 Implementation (Python)
+
+```python
+class Solution:
+    def maxCircularSum(self, arr):
+        t = 0
+        max_ending = max_so_far = arr[0]
+        min_ending = min_so_far = arr[0]
+
+        for i, x in enumerate(arr):
+            t += x
+
+            if i > 0:
+                max_ending = max(x, max_ending + x)
+                max_so_far = max(max_so_far, max_ending)
+
+                min_ending = min(x, min_ending + x)
+                min_so_far = min(min_so_far, min_ending)
+
+        if max_so_far < 0:
+            return max_so_far
+
+        return max(max_so_far, t - min_so_far)
+```
+
+---
+
+## ⏱️ Complexity Analysis
+
+* **Time Complexity:** `O(n)`
+* **Space Complexity:** `O(1)`
+
+The algorithm performs a single pass through the array and uses constant extra space, making it efficient for large inputs (up to `10^5` elements).
+
+---
+
+
