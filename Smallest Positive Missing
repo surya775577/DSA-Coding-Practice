@@ -1,0 +1,27 @@
+Smallest Positive Missing Number
+📌 Problem Statement
+
+Given an integer array arr[], your task is to find the smallest positive integer that is missing from the array.
+
+A positive number starts from 1
+
+The array may contain negative numbers, zeros, and duplicates
+
+🧠 Key Insight
+
+For an array of size n, the smallest missing positive number must lie in the range [1, n+1].
+Any number outside this range can be safely ignored.
+
+The solution rearranges the array in-place so that:
+
+Each value x (where 1 ≤ x ≤ n) is placed at index x-1
+
+After rearrangement, the first index where arr[i] ≠ i+1 gives the answer
+
+🛠️ Approach Used
+
+Cyclic Placement (Index Mapping)
+
+Rearrange elements so that each valid number is placed at its correct index
+
+Scan the array to identify the first missing positive integer
