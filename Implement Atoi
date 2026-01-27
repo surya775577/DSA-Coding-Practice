@@ -1,0 +1,39 @@
+Implement Atoi (String to Integer Conversion)
+📌 Problem Statement
+
+Given a string s, convert it into a 32-bit signed integer without using any built-in conversion functions.
+
+The conversion follows the rules of the atoi() function.
+
+🧠 Conversion Rules
+
+Ignore leading whitespaces
+
+Determine the sign (+ or -), default is positive
+
+Read digits until a non-digit character is found
+
+If no digits are present, return 0
+
+Clamp the result within the 32-bit signed integer range
+
+INT_MAX = 2³¹ − 1
+
+INT_MIN = −2³¹
+
+✅ Examples
+Input	Output
+"-123"	-123
+" -"	0
+" 1231231231311133"	2147483647
+"-999999999999"	-2147483648
+" -0012gfg4"	-12
+🧩 Solution Approach
+
+Traverse the string character by character
+
+Use ASCII values to convert characters to digits
+
+Handle overflow during number construction
+
+Stop processing once a non-digit character is encountered
