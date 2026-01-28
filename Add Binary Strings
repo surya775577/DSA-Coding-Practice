@@ -1,0 +1,37 @@
+Add Binary Strings
+📌 Problem Description
+Given two binary strings s1 and s2 consisting only of characters '0' and '1', compute their binary sum and return the result as a binary string.
+Important Notes
+Input strings may contain leading zeros
+The output string must not contain leading zeros
+The strings can be very large (up to 10⁶ characters), so numeric conversion is not allowed
+
+🧠 Approach
+
+The solution simulates manual binary addition using string traversal:
+
+Start from the rightmost characters of both strings
+
+Add corresponding bits along with a carry
+
+Store the result bit (sum % 2)
+
+Update the carry (sum // 2)
+
+Continue until all bits and carry are processed
+
+Remove leading zeros from the final result
+
+This approach ensures efficiency even for very large inputs.
+
+⚙️ Algorithm
+
+Initialize two pointers at the end of both strings
+
+Use a variable to track carry
+
+Iterate while either pointer is valid or carry exists
+
+Append each computed bit to a result list
+
+Reverse the result and strip leading zeros
