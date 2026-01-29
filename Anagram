@@ -1,0 +1,44 @@
+Anagram Check
+📌 Problem Statement
+
+Given two non-empty strings s1 and s2 consisting only of lowercase English letters, determine whether they are anagrams of each other.
+
+Two strings are considered anagrams if they contain the same characters with exactly the same frequencies, regardless of order.
+
+✅ Approach
+
+The solution uses a frequency counting technique:
+
+If the lengths of both strings differ, they cannot be anagrams.
+
+Since only lowercase English letters are involved, a fixed-size array of length 26 is used.
+
+Increment the frequency for characters in s1.
+
+Decrement the frequency for characters in s2.
+
+If all frequency values are zero at the end, the strings are anagrams.
+
+This approach avoids sorting and ensures optimal performance.
+
+⚙️ Algorithm Steps
+
+Compare the lengths of s1 and s2.
+
+Initialize a frequency array of size 26.
+
+Traverse both strings simultaneously:
+
+Increase count for s1 characters.
+
+Decrease count for s2 characters.
+
+Verify that all frequency values are zero.
+
+Return true if they match, otherwise false.
+
+🧠 Complexity Analysis
+
+Time Complexity: O(n)
+
+Space Complexity: O(1) (constant space for 26 characters)
