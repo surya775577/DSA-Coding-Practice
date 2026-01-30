@@ -1,0 +1,19 @@
+First Non-Repeating Character in a String (Python)
+📌 Problem Statement
+
+Given a string consisting of lowercase English letters, find the first non-repeating character in the string.
+If no such character exists, return $.
+
+🧠 Approach
+
+Count the frequency of each character in the string.
+
+Traverse the string again to find the first character with frequency 1.
+
+If none is found, return $.
+
+⏱️ Complexity Analysis
+
+Time Complexity: O(n)
+
+Space Complexity: O(1) (only 26 lowercase letters)
