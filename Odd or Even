@@ -1,0 +1,37 @@
+Odd or Even
+📌 Problem Statement
+
+Given a positive integer n, determine whether it is even or odd.
+Return:
+
+true → if the number is even
+
+false → if the number is odd
+
+💡 Approach
+
+A number is:
+
+Even if it is divisible by 2 (i.e., n % 2 == 0)
+
+Odd if it is not divisible by 2 (i.e., n % 2 != 0)
+
+We simply use the modulus (%) operator to check the remainder when divided by 2.
+
+🧪 Examples
+Input	Output	Explanation
+n = 15	false	15 is not divisible by 2 → Odd
+n = 44	true	44 is divisible by 2 → Even
+📊 Constraints
+
+1 ≤ n ≤ 10⁴
+
+Input is always a positive integer
+
+⏱ Time Complexity
+
+O(1) → Constant time operation
+
+💾 Space Complexity
+
+O(1) → No extra space required
