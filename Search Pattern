@@ -1,0 +1,35 @@
+Search Pattern (KMP Algorithm)
+📌 Problem Statement
+
+Given two strings:
+
+txt → Text string
+
+pat → Pattern string
+
+Find and return all starting indices (0-based indexing) where the pattern pat appears in the text txt.
+
+If the pattern does not occur in the text, return an empty list.
+Approach
+
+This project implements the Knuth-Morris-Pratt (KMP) Algorithm, an efficient string matching technique.
+
+Why KMP?
+
+Avoids redundant comparisons
+
+Works efficiently for large inputs
+
+Time Complexity: O(n + m)
+
+n → Length of text
+
+m → Length of pattern
+
+🧠 Algorithm Steps
+
+Construct the LPS (Longest Prefix Suffix) array for the pattern.
+
+Use LPS to skip unnecessary comparisons while scanning the text.
+
+Store all starting indices where full pattern matches occur.
