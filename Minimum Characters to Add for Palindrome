@@ -1,0 +1,32 @@
+Minimum Characters to Add for Palindrome
+📌 Problem Statement
+
+Given a string s, find the minimum number of characters to add at the front of the string to make it a palindrome.
+
+A palindrome is a string that reads the same forward and backward.
+
+🧠 Approach
+
+Instead of checking every prefix (which would take O(n²) time), we use an optimized KMP (Knuth–Morris–Pratt) based approach to solve the problem in O(n) time.
+
+🔍 Key Idea
+
+Reverse the string.
+
+Create a new string:
+
+temp = s + "#" + reverse(s)
+
+
+Compute the LPS (Longest Prefix Suffix) array for temp.
+
+The last value of the LPS array gives the length of the longest palindromic prefix.
+
+Final Answer:
+
+len(s) - lps[-1]
+
+🚀 Time & Space Complexity
+Complexity	Value
+Time	O(n)
+Space	O(n)
